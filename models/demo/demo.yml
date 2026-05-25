@@ -31,6 +31,8 @@ models:
     description: "DBT ephermeral model for the clean order"  
   - name: final_orders
     description: "DBT model for the finale orders model"
+  - name: session
+    description: 'dbt momdel for the session table'
 sources:
   - name: employee
     database: DBT_DB
@@ -67,4 +69,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: PATIENT_SRC
-
+  - name: session
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SESSION_SRC
