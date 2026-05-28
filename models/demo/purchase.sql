@@ -5,21 +5,22 @@
         incremental_strategy = 'merge',
         unique_key = 'PURCHASE_ID',
         merge_exclude_columns = ['INSERT_DTS']
-
     )
 }}
-
 with purchase_src as
 (
-    select 
-    PURCHASE_ID, 
-    PURCHASE_DATE, 
-    PURCHASE_STATUS, 
+    select
+    PURCHASE_ID,
+    PURCHASE_DATE,
+    PURCHASE_STATUS,
     CREATED_AT,
-    CURRENT_TIMESTAMP AS INSERT_DTS,
-    CURRENT_TIMESTAMP AS UPDATE_DTS
+    CURRENT_TIMESTAMP as INSERT_DTS,
+    CURRENT_TIMESTAMP as UPDATE_DTS
+    from {{source('purchase','PURCHASE_SRC')}}
 
-    from {{source,('purchase', 'PURCHASE_SRC')}}
+
+    {% if is_incremental() %}
+    where CREATED_AT > (select max(UPDATE_DTS) from {{this}})
+    {% endif %}
 )
-
-select * from purchase src
+select * from purchase_src
