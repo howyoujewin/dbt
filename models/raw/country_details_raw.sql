@@ -8,6 +8,8 @@ config
 
 "pre_hook": copy_json('COUNTRY_DETAILS_CP'),
 
+'database': 'GLUEDB',
+
 "schema": 'RAW'
 
 })
@@ -39,3 +41,4 @@ CAST(SOURCE_DATA AS VARIANT) AS SOURCE_DATA,
 CAST(INSERT_DTS AS TIMESTAMP(6)) AS INSERT_DTS
 
 FROM country_details_raw
+
