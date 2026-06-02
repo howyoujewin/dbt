@@ -13,7 +13,7 @@ vars:
   # --- Project 1 Variables ---
   target_db: 'GLUEDB'
   target_schema: 'PUBLIC'
-  project1_stage_name: 'GLUEDB.PUBLIC.GLUE_S3_STAGE' 
+  stage_name: 'GLUEDB.PUBLIC.GLUE_S3_STAGE' 
 
   # --- Project 2 Variables ---
   wrk_schema: 'BRONZE'

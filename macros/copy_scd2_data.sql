@@ -42,7 +42,7 @@ SELECT
 
     metadata$file_row_number AS SOURCE_FILE_ROW_NUMBER
 
-FROM @{{ var('stage_name') }}
+FROM @{{ var('projet2_stage_name') }}
 
 )
 
