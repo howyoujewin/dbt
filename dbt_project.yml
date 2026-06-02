@@ -50,11 +50,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     example:
-      schema: example
+      +schema: example
     silver:
-      schema: silver
-      materialized: table
+      +schema: silver
+      +materialized: table
     gold:
-        schema: gold
-        materialized: view
+      +schema: gold
+      +materialized: view
     
