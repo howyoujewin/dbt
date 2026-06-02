@@ -1,6 +1,7 @@
 {{ config(
     materialized='table',
     database='PC_DBT_DB',
+    pre_hook="{{ macros_copy_csv('WORK_PRODUCT_COPY') }}",
     schema='SILVER',
     alias='WORK_PRODUCT_TRANSFORM'
 ) }}
