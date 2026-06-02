@@ -10,13 +10,17 @@ config-version: 2
 profile: 'default'
 
 vars:
+  # --- Project 1 Variables ---
+  target_db: 'GLUEDB'
+  target_schema: 'PUBLIC'
+  project1_stage_name: 'GLUEDB.PUBLIC.GLUE_S3_STAGE' 
 
-   target_db: GLUEDB
-
-   target_schema: PUBLIC
-
-   stage_name: GLUEDB.PUBLIC.GLUE_S3_STAGE
-
+  # --- Project 2 Variables ---
+  wrk_schema: 'BRONZE'
+  file_format_csv: 'MYDB.BRONZE.MY_CSV_FORMAT'
+  purge_status: false  
+  project2_stage_name: 'MYDB.BRONZE.s3_test'  
+  rawhist_db: 'MYDB'
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
