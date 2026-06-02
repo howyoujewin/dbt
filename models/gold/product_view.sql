@@ -1,4 +1,5 @@
 {{ config({ "materialized":'view',
+"database": "PC_DBT_DB",
 
  "alias":'PRODUCT_VIEW',
 
