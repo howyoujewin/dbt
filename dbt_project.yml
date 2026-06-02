@@ -57,4 +57,10 @@ models:
     gold:
       +schema: gold
       +materialized: view
+  walmart:
+      +database: PC_DBT_DB
+      +materialized: table
+      +tags: 'walmart_project'
+      bronze:
+        +schema: bronze_walmart
     

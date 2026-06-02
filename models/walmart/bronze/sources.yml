@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: walmart_raw
+    database: PC_DBT_DB
+    schema: BRONZE_WALMART
+    tables:
+      - name: raw_store_dim_lnd
