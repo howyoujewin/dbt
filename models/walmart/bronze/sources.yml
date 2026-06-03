@@ -7,3 +7,4 @@ sources:
     tables:
       - name: raw_store_dim_lnd
       - name: raw_walmart_features 
+      - name: raw_department_sales

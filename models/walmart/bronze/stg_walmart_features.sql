@@ -2,7 +2,7 @@
 
 select
     Store as store_id,
-    to_date(Date, 'MM/DD/YYYY') as date_day, -- Converts string date to a proper Snowflake DATE data type
+    TRY_TO_DATE(date) as date_day, -- Converts string date to a proper Snowflake DATE data type
     Temperature as temperature,
     Fuel_Price as fuel_price,
     MarkDown1::float as markdown_1, -- Directly casting to float since 'NA' is already NULL

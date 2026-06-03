@@ -51,16 +51,20 @@ models:
   my_new_project:
     example:
       +schema: example
-    silver:
-      +schema: silver
-      +materialized: table
-    gold:
+
+    walmart:
+      +database: PC_DBT_DB       
+      +tags: 'walmart_project'
+      
+      bronze:
+        +schema: bronze_walmart  
+        +materialized: view
+
+      silver:
+        +schema: silver         
+        +materialized: table
+
+    gold:                        
       +schema: gold
       +materialized: view
-  walmart:
-      +database: PC_DBT_DB
-      +materialized: table
-      +tags: 'walmart_project'
-      bronze:
-        +schema: bronze_walmart
     
